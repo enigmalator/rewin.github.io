@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0xHacker // Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            green: '#00ff66',
+                            purple: '#bd00ff',
+                            dark: '#0a0a0f',
+                            card: '#12121a',
+                            border: '#2a2a3c'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['Fira Code', 'monospace'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0f;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+        .glow-green {
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.15);
+        }
+        .glow-purple {
+            box-shadow: 0 0 25px rgba(189, 0, 255, 0.15);
+        }
+        .glow-text-green {
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+        }
+        .glow-text-purple {
+            text-shadow: 0 0 10px rgba(189, 0, 255, 0.5);
+        }
+        .glass {
+            background: rgba(18, 18, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-hover:hover {
+            border-color: rgba(0, 255, 102, 0.4);
+            transform: translateY(-4px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a3c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ff66;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .animate-blink {
+            animation: blink 1s infinite;
+        }
+    </style>
+</head>
+<body class="bg-cyber-dark text-gray-100 min-h-screen relative selection:bg-cyber-green selection:text-black">
+
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyber-purple/10 rounded-full blur-[120px]"></div>
+        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-cyber-green/10 rounded-full blur-[120px]"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f29370a_1px,transparent_1px),linear-gradient(to_bottom,#1f29370a_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    </div>
+
+    <header class="sticky top-0 z-50 glass border-b border-cyber-border">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="code-font font-bold text-lg text-cyber-green flex items-center gap-2">
+                <span class="text-cyber-purple">&gt;</span> root@portfolio:~#
+            </a>
+            <nav class="hidden md:flex items-center gap-6 code-font text-sm text-gray-400">
+                <a href="#about" class="hover:text-cyber-green transition-colors">~/about</a>
+                <a href="#projects" class="hover:text-cyber-green transition-colors">~/flagships</a>
+                <a href="#arsenal" class="hover:text-cyber-green transition-colors">~/arsenal</a>
+                <a href="#contact" class="hover:text-cyber-green transition-colors">~/contact</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs code-font bg-cyber-green/10 text-cyber-green border border-cyber-green/20">
+                    <span class="w-2 h-2 rounded-full bg-cyber-green animate-pulse"></span> online
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-6xl mx-auto px-6 py-12 md:py-20 flex flex-col gap-24">
+
+        <section class="flex flex-col items-start justify-center min-h-[70vh] py-12">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg glass code-font text-xs text-cyber-purple mb-6 border border-cyber-purple/30">
+                <i class="fa-solid fa-terminal"></i> system_boot: success. Welcome, guest.
+            </div>
+            
+            <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-4">
+                yo, i'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-green to-cyber-purple glow-text-green">Alex Chen</span> 👋
+            </h1>
+            
+            <div class="code-font text-lg md:text-2xl text-cyber-green mb-8 flex items-center gap-2">
+                <span>&gt;</span>
+                <span id="typewriter" class="border-r-2 border-cyber-green pr-1">Cybersecurity Major | Ethical Hacker</span>
+                <span class="animate-blink">_</span>
+            </div>
+
+            <p class="text-gray-400 text-lg max-w-2xl mb-10 leading-relaxed">
+                Undergrad CS & InfoSec specialist obsessed with low-level systems, offensive security tooling, and breaking things legally before the bad actors do. 
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#projects" class="px-6 py-3 rounded-xl bg-cyber-green text-black font-semibold code-font flex items-center gap-2 hover:bg-emerald-400 transition-all glow-green">
+                    <i class="fa-solid fa-flag">></i> explore_projects()
+                </a>
+                <a href="#contact" class="px-6 py-3 rounded-xl glass text-gray-200 font-semibold code-font flex items-center gap-2 glass-hover">
+                    <i class="fa-solid fa-paper-plane text-cyber-purple"></i> ping_me()
+                </a>
+            </div>
+
+            <!-- Quick Stats Ticker -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mt-16 pt-8 border-t border-cyber-border code-font">
+                <div class="glass p-4 rounded-xl">
+                    <div class="text-gray-500 text-xs">STATUS</div>
+                    <div class="text-cyber-green font-bold text-sm mt-1">CTF Competitor</div>
+                </div>
+                <div class="glass p-4 rounded-xl">
+                    <div class="text-gray-500 text-xs">FOCUS</div>
+                    <div class="text-cyber-purple font-bold text-sm mt-1">OffSec & NetDef</div>
+                </div>
+                <div class="glass p-4 rounded-xl">
+                    <div class="text-gray-500 text-xs">COFFEE_INTAKE</div>
+                    <div class="text-cyan-400 font-bold text-sm mt-1">4.2 Cups / Day</div>
+                </div>
+                <div class="glass p-4 rounded-xl">
+                    <div class="text-gray-500 text-xs">VIBE</div>
+                    <div class="text-yellow-400 font-bold text-sm mt-1">Low-key Elite</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="code-font text-cyber-green text-xl">#</span>
+                <h2 class="text-2xl md:text-3xl font-bold">about_me.log</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 glass p-8 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4 text-gray-300 leading-relaxed">
+                        <p>
+                            I'm a computer science undergrad with a heavy specialization in cybersecurity and network infrastructure. When I'm not drowning in university discrete math assignments, you can find me writing custom Python exploit scripts, dissecting malware samples in sandboxes, or competing in regional CTF (Capture The Flag) tournaments.
+                        </p>
+                        <p>
+                            My philosophy is simple: you can't truly defend a system until you know every single angle it can be broken from. I build tools that automate threat hunting and vulnerability assessments.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-cyber-border flex items-center gap-4 code-font text-xs text-gray-400">
+                        <span><i class="fa-solid fa-location-dot text-cyber-green"></i> US / Remote</span>
+                        <span><i class="fa-solid fa-graduation-cap text-cyber-purple"></i> B.S. Computer Science</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl flex flex-col justify-between border border-cyber-border">
+                    <h3 class="code-font text-cyber-green text-sm font-bold uppercase tracking-wider mb-4">
+                        <i class="fa-solid fa-microchip"></i> Vibe Check
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-300 code-font">
+                        <li class="flex items-start gap-2">
+                            <span class="text-cyber-green">&gt;</span> 
+                            <span>No cap, Linux terminal is home.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-cyber-green">&gt;</span> 
+                            <span>Dark mode everything. Light mode burns retinas.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-cyber-green">&gt;</span> 
+                            <span>Lo-fi beats & keyboard clacks loop 24/7.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-cyber-green">&gt;</span> 
+                            <span>Zero tolerance for sloppy insecure code.</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-3 rounded-lg bg-black/40 border border-cyber-border code-font text-xs text-cyber-purple text-center">
+                        "There is no patch for human stupidity."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="code-font text-cyber-green text-xl">#</span>
+                        <h2 class="text-2xl md:text-3xl font-bold">flagship_projects</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm code-font">Production-grade security & utility tools straight from my GitHub.</p>
+                </div>
+                <div class="code-font text-xs text-cyber-purple bg-cyber-purple/10 px-3 py-1 rounded-lg border border-cyber-purple/25 self-start">
+                    active_repos: 3 main builds
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="glass p-6 rounded-2xl glass-hover flex flex-col justify-between border border-cyber-border group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-xl bg-cyber-green/10 flex items-center justify-center text-cyber-green text-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </span>
+                            <div class="flex gap-2">
+                                <a href="https://github.com" target="_blank" class="w-8 h-8 rounded-lg bg-black/50 flex items-center justify-center text-gray-400 hover:text-cyber-green transition-colors">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-100 mb-2 group-hover:text-cyber-green transition-colors">SpectreScanner</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            A high-performance custom network vulnerability scanner and threat analyzer built in Python. Automatically flags misconfigurations, open ports, and potential CVE vulnerabilities before bad actors exploit them.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6 code-font text-xs">
+                            <span class="px-2.5 py-1 rounded-md bg-black/40 text-cyber-green border border-cyber-green/20">Python</span>
+                            <span class="px-2.5 py-1 rounded-md bg-black/40 text-cyan-400 border border-cyan-400/20">Scapy</span>
+                            <span class="px-2.5 py-1 rounded-md bg-black/40 text-purple-400 border border-purple-400/20">Linux</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="w-full py-2.5 rounded-xl bg-black/40 hover:bg-cyber-green hover:text-black text-gray-300 transition-all font-semibold code-font text-xs flex items-center justify-center gap-2 border border-cyber-border">
+                            <span>view_source()</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass p-6 rounded-2xl glass-hover flex flex-col justify-between border border-cyber-border group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-xl bg-cyber-purple/10 flex items-center justify-center text-cyber-purple text-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-radar"></i>
+                            </span>
+                            <div class="flex gap-2">
+                                <a href="https://github.com" target="_blank" class="w-8 h-8 rounded-lg bg-black/50 flex items-center justify-center text-gray-400 hover:text-cyber-green transition-colors">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-100 mb-2 group-hover:text-cyber-purple transition-colors">LogSentinel AI</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Automated log analysis and SIEM pipeline simulation tool. Parses multi-gigabyte server access logs via regex and heuristics to catch suspicious IP traffic spikes and automated brute-force login attempts in real-time.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6 code-font text-xs">
+                            <span class="px-2.5 py-1 rounded-md bg-black/40 text-cyber-green border border-cyber-green/20">Python</span>
+                            <span class="px-2.5 py-1 rounded-md bg-black/40 text-yellow-400 border border-yellow-400/20">Bash</span>
+                            <span class="px-2.5 py-1 rounded-md bg-black/40 text-cyan-400 border border-cyan-400/20">Regex</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="w-full py-2.5 rounded-xl bg-black/40 hover:bg-cyber-purple hover:text-white text-gray-300 transition-all font-semibold code-font text-xs flex items-center justify-center gap-2 border border-cyber-border">
+                            <span>view_source()</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass p-6 rounded-2xl glass-hover flex flex-col justify-between border border-cyber-border group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-key"></i>
+                            </span>
+                            <div class="flex gap-2">
+                                <a href="https://github.com" target="_blank" class="w-8 h-8 rounded-lg bg-black/50 flex items-center justify-center text-gray-400 hover:text-cyber-green transition-colors">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-100 mb-2 group-hover:text-cyan-400 transition-colors">CipherPipe</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Engineered a secure, zero-trust peer-to-peer communication pipeline implementing custom asymmetric and symmetric cryptographic protocols in low-level C utilizing OpenSSL bindings.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6 code-font text-xs">
+                            <span class="px-2.5 py-1 rounded-md bg-black/40 text-red-400 border border-red-400/20">C</span>
+                            <span class="px-2.5 py-1 rounded-md bg-black/40 text-cyber-purple border border-cyber-purple/20">OpenSSL</span>
+                            <span class="px-2.5 py-1 rounded-md bg-black/40 text-cyan-400 border border-cyan-400/20">Sockets</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="w-full py-2.5 rounded-xl bg-black/40 hover:bg-cyan-500 hover:text-black text-gray-300 transition-all font-semibold code-font text-xs flex items-center justify-center gap-2 border border-cyber-border">
+                            <span>view_source()</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="arsenal" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="code-font text-cyber-green text-xl">#</span>
+                <h2 class="text-2xl md:text-3xl font-bold">the_arsenal</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 code-font">
+                <!-- Languages -->
+                <div class="glass p-6 rounded-2xl border border-cyber-border">
+                    <div class="flex items-center gap-3 mb-4 text-cyber-green">
+                        <i class="fa-solid fa-code text-lg"></i>
+                        <h3 class="font-bold text-sm tracking-wide uppercase">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Python</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">C / C++</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Bash / Shell</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">SQL</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">JavaScript</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Assembly (x86)</span>
+                    </div>
+                </div>
+
+                <!-- Security Tools -->
+                <div class="glass p-6 rounded-2xl border border-cyber-border">
+                    <div class="flex items-center gap-3 mb-4 text-cyber-purple">
+                        <i class="fa-solid fa-shield-virus text-lg"></i>
+                        <h3 class="font-bold text-sm tracking-wide uppercase">Security & OffSec</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Wireshark</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Nmap</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Burp Suite</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Metasploit</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Ghidra</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Splunk</span>
+                    </div>
+                </div>
+
+                <!-- DevOps & Infra -->
+                <div class="glass p-6 rounded-2xl border border-cyber-border">
+                    <div class="flex items-center gap-3 mb-4 text-cyan-400">
+                        <i class="fa-solid fa-server text-lg"></i>
+                        <h3 class="font-bold text-sm tracking-wide uppercase">Infra & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Linux / Unix</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Git & GitHub</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">Docker</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">VS Code</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-black/50 text-xs text-gray-300 border border-cyber-border">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass p-8 rounded-2xl border border-cyber-border">
+            <div class="flex items-center justify-between mb-6 code-font">
+                <div class="flex items-center gap-3">
+                    <span class="text-cyber-green text-xl">#</span>
+                    <h2 class="text-xl md:text-2xl font-bold">github_activity.stats</h2>
+                </div>
+                <span class="text-xs text-cyber-purple hidden md:inline">live telemetry</span>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 items-center justify-center">
+                <div class="flex justify-center bg-black/40 p-4 rounded-xl border border-cyber-border">
+                    <img src="https://github-readme-stats.vercel.app/api?username=octocat&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" class="w-full max-w-md rounded-lg" onerror="this.src='https://placehold.co/500x200/12121a/00ff66?text=GitHub+Stats+Card'" />
+                </div>
+                <div class="flex justify-center bg-black/40 p-4 rounded-xl border border-cyber-border">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=octocat&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" class="w-full max-w-md rounded-lg" onerror="this.src='https://placehold.co/500x200/12121a/bd00ff?text=Top+Languages+Card'" />
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="scroll-mt-24 pb-12">
+            <div class="glass p-8 md:p-12 rounded-3xl border border-cyber-border text-center relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-cyber-green/10 rounded-full blur-[100px] pointer-events-none"></div>
+                
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs code-font bg-cyber-green/10 text-cyber-green border border-cyber-green/20 mb-6">
+                    <i class="fa-solid fa-satellite-dish animate-pulse"></i> channels_open
+                </div>
+
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Let's Build or Secure Something.</h2>
+                <p class="text-gray-400 max-w-xl mx-auto mb-8 text-sm md:text-base leading-relaxed">
+                    Whether you want to talk CTFs, internship opportunities, collaborative security projects, or just drop a meme—my inbox is monitored 24/7.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-4 code-font">
+                    <a href="mailto:alex.chen@example.com" class="px-6 py-3 rounded-xl bg-cyber-green text-black font-bold flex items-center gap-2 hover:bg-emerald-400 transition-all glow-green">
+                        <i class="fa-solid fa-envelope"></i> email_me()
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="px-6 py-3 rounded-xl glass text-gray-200 font-semibold flex items-center gap-2 glass-hover">
+                        <i class="fa-brands fa-linkedin text-cyan-400"></i> linkedin()
+                    </a>
+                    <a href="https://github.com" target="_blank" class="px-6 py-3 rounded-xl glass text-gray-200 font-semibold flex items-center gap-2 glass-hover">
+                        <i class="fa-brands fa-github text-cyber-purple"></i> github()
+                    </a>
+                    <a href="https://discord.com" target="_blank" class="px-6 py-3 rounded-xl glass text-gray-200 font-semibold flex items-center gap-2 glass-hover">
+                        <i class="fa-brands fa-discord text-indigo-400"></i> discord()
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-cyber-border py-8 text-center code-font text-xs text-gray-500 relative z-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+                &copy; 2026 Alex Chen. Built with Tailwind & Cyber Energy.
+            </div>
+            <div class="text-cyber-green">
+                root@0xhacker:~$ exit 0
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const words = [
+            "Cybersecurity Major",
+            "Ethical Hacker in Training",
+            "Breaking Things Legally",
+            "Low-Level Systems Enthusiast",
+            "Turning Coffee Into Code"
+        ];
+        let i = 0;
+        let timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typewriter').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000);
+                    return false;
+                }
+                timer = setTimeout(loopTyping, 100);
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typewriter').innerHTML = word.join("");
+                } else {
+                    if (words.length > (i + 1)) {
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+                    setTimeout(typingEffect, 500);
+                    return false;
+                }
+                timer = setTimeout(loopDeleting, 50);
+            };
+            loopDeleting();
+        }
+
+        // Start typewriter on load
+        window.onload = function() {
+            typingEffect();
+        }
+    </script>
+</body>
+</html>
